@@ -38,6 +38,7 @@ continentes.addEventListener("change", () => {
     main.innerHTML = `Buscando Banderas`;
 
     if(continente === "filter"){
+        main.innerHTML=``
         filter()
     }else{
             main.innerHTML=``
