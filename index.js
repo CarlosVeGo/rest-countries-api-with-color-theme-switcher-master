@@ -101,7 +101,7 @@ searcher.addEventListener("input", () => {
                     `
                 }
             })
-        })).catch((err)=> main.innerHTML = `Try Again Later`)
+        })).catch((err)=> main.innerHTML = `Try Again Later!`)
     }
 })
 
