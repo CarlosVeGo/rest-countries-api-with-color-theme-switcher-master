@@ -40,6 +40,7 @@ continentes.addEventListener("change", () => {
     if(continente === "filter"){
         filter()
     }else{
+            main.innerHTML=``
             fetch(apiUrl).then((data) => data.json().then((res)=>{
             res.forEach( re => {
 
@@ -70,7 +71,7 @@ continentes.addEventListener("change", () => {
 searcher.addEventListener("input", () => {
     
     const input = searcher.value.toLowerCase();
-    main.innerHTML =`${input}`
+    main.innerHTML =``
     console.log(input)
     const long = input.length
     
