@@ -3,6 +3,9 @@ const continentes = document.querySelector("#continentes");
 const apiUrl = `https://restcountries.com/v3.1/all`;
 const searcher = document.querySelector(".searcher");
 
+
+
+
 function filter(){ 
     
     fetch(apiUrl).then((data) => data.json().then((res)=>{
@@ -43,7 +46,7 @@ continentes.addEventListener("change", () => {
     }else{
             main.innerHTML=``
             fetch(apiUrl).then((data) => data.json().then((res)=>{
-            res.forEach( re => {
+            res?.forEach( re => {
 
                 const name = re.name.common
                 const region = re.region
@@ -69,27 +72,27 @@ continentes.addEventListener("change", () => {
     }
 })
 
-searcher.addEventListener("input", () => {
+searcher?.addEventListener("input", () => {
     
-    const input = searcher.value.toLowerCase();
+    const input = searcher.value?.toLowerCase();
     main.innerHTML =``
     console.log(input)
     const long = input.length
     
-    if( input.length === 0 ){
+    if( input?.length === 0 ){
         filter()
     }else{
         main.innerHTML =``
         fetch(apiUrl).then((data) => data.json().then((res)=>{
-            res.forEach( re => {
+            res?.forEach( re => {
                 
                 const name = re.name.common
                 const region = re.region
                 const poblacion = re.population
                 const capital = re.capital
-                const image = re.flags.png 
+                const image = re.flags.png
 
-                if(name.substr(0,long).toLowerCase()===input){
+                if(name?.toLowerCase().includes(input)){
                     main.innerHTML +=`
                     <div class="country" id="${name}">
                         <img src="${image}">
@@ -108,3 +111,4 @@ searcher.addEventListener("input", () => {
 })
 
 filter()
+

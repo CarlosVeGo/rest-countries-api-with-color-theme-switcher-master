@@ -7,16 +7,18 @@
 
 
 body{
-        height: 100vh;
-        width: 100vw;
+    height: 100vh;
+    width: 100vw;
 }
 
-    .container{
-        display: flex;
-        flex-direction: column;
-        width: 100vw;
-        height: 100vh;
-        padding: 0 50px 20px 50px;
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    padding: 0 50px 20px 50px;
+    overflow-x: hidden;
+    background-color: hsl(0, 0%, 97%);
 }
 
 img{
@@ -27,8 +29,7 @@ img{
 
 .top{   
         display: flex;
-        width: 100vw;
-        height: 80px;
+        height: 60px;
         justify-content: space-between;
         align-items: center;
         padding: 20px 0;
@@ -36,21 +37,26 @@ img{
 }
 
 main{
-        width: 100%;
-        display: grid;
-        grid-template-columns: repeat(4,1fr);
-        gap:50px;
-        background-color:hsl(0, 0%, 97%);
+        
+display: grid;
+    grid-template-columns: repeat(
+        auto-fill, 
+        minmax(300px,1fr)
+    );
+    grid-column-gap: 40px;
+    justify-content: space-between;
+    background-color:hsl(0, 0%, 97%);
 }
 
+
 .country{
-        display: flex;
-        flex-direction: column;
-        height: 350px;
-        width: 300px;
-        background-color: hsl(0, 0%, 100%);
-        box-shadow: 0 10px 20px hsl(0, 0%, 97%);
-        border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    height: 350px;
+    width: 300px;
+    background-color: hsl(0, 0%, 100%);
+    box-shadow: 0 10px 20px hsl(0, 0%, 97%);
+    border-radius: 5px;
 }
 
 .info{
@@ -76,7 +82,9 @@ header{
 .principal{
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 30px;
+    background-color:hsl(0, 0%, 97%);
+    padding-top: 30px;
 }
 
 .buscador{
@@ -85,23 +93,21 @@ header{
     align-items: center;
     height: 70px;
     background-color: hsl(0, 0%, 98%);
-    padding-right: 50px;
+    padding-right: 40px;
 }
 
-.buscador-input{
-    width: 50%;
-}
 .searcher{
     height: 50px;
     width: 35%;
     padding: 8px;
-    border-radius: 10px;
+    border-radius:20px;
     border: none;
 }
 
 #continentes{
     width: 150px;
     height: 50px;
+    align-self: flex-end;
 }
 
 .title-name{
@@ -130,9 +136,17 @@ header{
 }
 
 @media(max-width:450px){
-    .buscador, main{
+    .buscador{
         display: flex;
-        flex-direction: column;
+        flex-direction:column;
+        align-items: flex-start;
         gap: 20px;
+    }
+    .searcher{
+        width:100%;
+    }
+
+    #continentes{
+        align-self: auto;
     }
 }
